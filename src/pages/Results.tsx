@@ -60,10 +60,11 @@ export default function Results() {
             </ScrollReveal>
           </div>
 
-          {/* Disclosure — required transparency */}
+          {/* Disclosure kept, styled as a quiet caption rather than a banner.
+              The scenes are concept photography, so some disclosure has to stay. */}
           <ScrollReveal delay={0.15}>
-            <p className="mt-6 text-sm text-charcoal/60 font-300 italic bg-sage/50 border-l-2 border-gold px-5 py-3.5">
-              Illustrative before-and-after scenes created for website design. These are not actual FebRight customer jobs or documented project results.
+            <p className="mt-4 text-xs text-charcoal/40 font-300 italic">
+              Illustrative examples, not actual customer jobs.
             </p>
           </ScrollReveal>
         </div>

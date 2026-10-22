@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Leaf, Shield, Clock, ArrowRight, MapPin, Phone } from 'lucide-react'
 import Hero from '../components/Hero'
-import ServicesGrid from '../components/ServicesGrid'
 import FAQAccordion from '../components/FAQAccordion'
 import CTA from '../components/CTA'
 import ScrollReveal from '../components/ScrollReveal'
@@ -34,10 +33,8 @@ export default function Home() {
         </div>
       </div>
 
-      <ServicesGrid />
-
       {/* Approach — image cards, no empty cells */}
-      <section className="py-14 lg:py-20 bg-cream">
+      <section className="py-12 lg:py-16 bg-cream">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <ScrollReveal className="mb-10 flex flex-col md:flex-row md:items-end gap-5">
             <div className="flex-1">
@@ -81,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio band — text and images share the row, nothing empty */}
-      <section className="py-14 lg:py-20 bg-ivory">
+      <section className="py-12 lg:py-16 bg-ivory">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             <ScrollReveal direction="left" className="lg:col-span-4 flex flex-col justify-center">
@@ -143,7 +140,7 @@ export default function Home() {
       </section>
 
       {/* How it works */}
-      <section className="py-14 lg:py-20 bg-ivory">
+      <section className="py-12 lg:py-16 bg-ivory">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <ScrollReveal className="mb-10">
             <p className="section-label mb-3">How It Works</p>
@@ -164,7 +161,7 @@ export default function Home() {
       </section>
 
       {/* FAQ + contact rail side by side — fills the row */}
-      <section className="py-14 lg:py-20 bg-cream">
+      <section className="py-12 lg:py-16 bg-cream">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div className="lg:col-span-7">

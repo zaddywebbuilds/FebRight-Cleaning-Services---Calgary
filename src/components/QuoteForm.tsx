@@ -71,14 +71,9 @@ export default function QuoteForm({ preselectedService = '', className = '' }: Q
       aria-label="Free quote request form"
     >
       {!FORMSPREE_ENDPOINT && (
-        <div className="bg-gold/15 border border-gold/40 text-charcoal text-sm px-4 py-3 flex items-start gap-2">
-          <AlertCircle size={16} className="flex-shrink-0 mt-0.5 text-gold" />
-          <span>
-            <strong>Form not yet configured.</strong> Submissions will open your email client. To enable direct
-            submissions, add your Formspree endpoint as{' '}
-            <code className="text-xs font-mono bg-white/60 px-1 py-0.5">VITE_FORMSPREE_ENDPOINT</code> in{' '}
-            <code className="text-xs font-mono bg-white/60 px-1 py-0.5">.env</code>.
-          </span>
+        <div className="bg-gold/15 border border-gold/40 text-charcoal text-sm px-4 py-3 flex items-center gap-2">
+          <AlertCircle size={16} className="flex-shrink-0 text-gold" />
+          <span>Form not configured yet.</span>
         </div>
       )}
 
