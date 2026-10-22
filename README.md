@@ -142,7 +142,8 @@ Nothing below is verified. **Confirm each item with the business owner before th
 - [ ] The nine `gallery/` images and all twelve `before-after/` images are **AI-generated concept photography**, not real FebRight jobs. The Results page states this in writing. Replace with real job photography when available, and only then consider removing the disclaimer.
 - [ ] Confirm FebRight has the right to use the seven `google-maps-photos/` images on its own website, and that no client space is shown without permission.
 - [ ] Add a real logo. The current wordmark is an original SVG placeholder and is not presented as an official logo.
-- [ ] Replace the Open Graph share image. `og:image` currently points at the hero photo, which is concept photography; a branded share card would serve better.
+- [ ] Replace the Open Graph share image. `og:image` in `index.html` currently points at a portfolio photo (844×568). A purpose-made 1200×630 branded card would preview better. Keep it a JPEG — WebP support in link previews is unreliable.
+- [ ] Update the absolute `og:` and `twitter:` URLs in `index.html` when the domain is confirmed. They must be hardcoded there because social scrapers do not run JavaScript, so the runtime values from `Seo.tsx` never reach them.
 
 ### Must configure before launch
 - [ ] Set `VITE_FORMSPREE_ENDPOINT` so the quote form submits for real, then **send a test submission and confirm it arrives**.

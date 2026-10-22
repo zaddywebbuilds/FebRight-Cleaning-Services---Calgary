@@ -9,13 +9,29 @@
     <meta name="description" content="FebRight Cleaning Services brings careful, eco-conscious professional cleaning to Calgary and surrounding areas. Residential and commercial cleaning tailored to your space." />
     <meta name="robots" content="index, follow" />
 
-    <!-- Canonical, Open Graph and per-route titles are set at runtime by
-         src/components/Seo.tsx, which resolves them against the host actually
-         serving the site. A hardcoded domain here would point crawlers at a
-         host that may not serve this content. -->
+    <!-- Social scrapers (WhatsApp, Facebook, LinkedIn, iMessage) do not run
+         JavaScript, so they only ever read these static tags — the per-route
+         values that src/components/Seo.tsx sets at runtime are invisible to
+         them. Every shared link therefore previews with the values below,
+         whichever route was shared. Update the absolute URLs here when the
+         production domain is confirmed.
+
+         og:image is deliberately a JPEG: WebP support in link previews is
+         inconsistent, WhatsApp especially. -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FebRight Cleaning Services" />
     <meta property="og:title" content="FebRight Cleaning Services — Calgary" />
     <meta property="og:description" content="Professional residential and commercial cleaning in Calgary. Eco-friendly products. Get a free quote." />
+    <meta property="og:url" content="https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/" />
+    <meta property="og:image" content="https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/assets/google-maps-photos/photo_002.jpg" />
+    <meta property="og:image:width" content="844" />
+    <meta property="og:image:height" content="568" />
+    <meta property="og:image:alt" content="A bright, freshly cleaned living room in Calgary" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FebRight Cleaning Services — Calgary" />
+    <meta name="twitter:description" content="Professional residential and commercial cleaning in Calgary. Eco-friendly products. Get a free quote." />
+    <meta name="twitter:image" content="https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/assets/google-maps-photos/photo_002.jpg" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
