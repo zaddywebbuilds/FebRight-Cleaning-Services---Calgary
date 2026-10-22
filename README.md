@@ -48,7 +48,17 @@ For a project page served from a subdirectory, set the base path before building
 VITE_BASE_PATH=/your-repo-name/
 ```
 
-Leave it unset for a root-domain deploy. The router reads the same value automatically.
+Leave it unset for a root-domain deploy. The router reads the same value automatically, and image paths in `src/content/imageMap.ts` resolve against it at runtime.
+
+---
+
+## Deployment
+
+`.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to `main`.
+
+**One-time setup:** in the repository, go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. If it is left on "Deploy from a branch", Pages serves the repo root — which contains the unbuilt source `index.html` — and the site renders blank.
+
+The workflow derives `VITE_BASE_PATH` from the repository name, so renaming the repo will not break asset paths. It also copies `index.html` to `404.html`, which is what lets client-side routes such as `/services` survive a direct visit or a refresh — GitHub Pages has no server-side rewrite.
 
 ---
 
