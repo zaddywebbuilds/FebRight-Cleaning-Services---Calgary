@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-ivory text-charcoal font-sans;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-display;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-forest;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-forest text-ivory font-sans font-500 text-sm tracking-wide transition-all duration-300 hover:bg-charcoal active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 border border-forest text-forest font-sans font-500 text-sm tracking-wide transition-all duration-300 hover:bg-forest hover:text-ivory active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 text-forest font-sans font-500 text-sm tracking-wide underline-offset-4 hover:underline transition-all duration-200;
+  }
+
+  .section-label {
+    @apply font-sans text-xs font-600 tracking-widest2 uppercase text-gold;
+  }
+
+  .section-heading {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-300 leading-tight text-charcoal;
+  }
+
+  .card-hover {
+    @apply transition-all duration-400 ease-smooth hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .img-surface {
+    @apply w-full h-full object-cover;
+  }
+}
+
+@layer utilities {
+  .font-300 { font-weight: 300; }
+  .font-400 { font-weight: 400; }
+  .font-500 { font-weight: 500; }
+  .font-600 { font-weight: 600; }
+  .font-700 { font-weight: 700; }
+
+  .duration-400 { transition-duration: 400ms; }
+
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  }
+
+  .field-label {
+    @apply block text-xs font-600 font-sans tracking-wide text-charcoal/70 uppercase mb-2;
+  }
+
+  .field-input {
+    @apply w-full border border-sage bg-white px-4 py-3 text-sm text-charcoal font-sans font-300 focus:outline-none focus:border-forest focus:ring-1 focus:ring-forest transition-colors duration-200;
+  }
+
+  .field-input::placeholder {
+    @apply text-charcoal/35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
