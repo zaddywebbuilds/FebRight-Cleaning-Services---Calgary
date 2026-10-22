@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
+import Seo from '../components/Seo'
 
 export default function NotFound() {
   return (
     <main className="pt-24 bg-ivory">
+      <Seo
+        noindex
+        title="Page Not Found"
+        description="This page is not available. Browse FebRight Cleaning Services for residential and commercial cleaning in Calgary."
+        path="/404"
+      />
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-2xl px-6 text-center">
           <p className="section-label mb-4">404</p>

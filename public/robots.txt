@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://febrightcleaningservices.com/sitemap.xml
+# Update this origin alongside sitemap.xml once the production domain is confirmed.
+Sitemap: https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/sitemap.xml

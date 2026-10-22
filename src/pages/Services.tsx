@@ -3,11 +3,17 @@ import { ArrowRight } from 'lucide-react'
 import { confirmedServices } from '../content/services'
 import { img } from '../content/imageMap'
 import ScrollReveal from '../components/ScrollReveal'
+import Seo from '../components/Seo'
 import CTA from '../components/CTA'
 
 export default function Services() {
   return (
     <main className="pt-24">
+      <Seo
+        title="Cleaning Services in Calgary"
+        description="Residential and commercial cleaning across Calgary and surrounding areas, using eco-friendly, non-toxic products. See what FebRight offers and request a quote."
+        path="/services"
+      />
 
       {/* Header — paired with the first detail image so nothing sits empty */}
       <section className="py-12 lg:py-16 bg-ivory">

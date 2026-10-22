@@ -126,7 +126,7 @@ Nothing below is verified. **Confirm each item with the business owner before th
 ### Must confirm — business facts
 - [ ] **Phone number** — `+1 403-470-0416` was taken from a public directory listing. Confirm it is current.
 - [ ] **Email address** — `hello@febrightcleaningservices.com` is a placeholder. Replace with the real inbox.
-- [ ] **Domain** — `febrightcleaningservices.com` is from a public listing. Confirm ownership, then update the canonical URL in `index.html`, `robots.txt` and `sitemap.xml`.
+- [ ] **Domain** — `febrightcleaningservices.com` is from a public listing. Confirm ownership, then set `VITE_SITE_URL` to the live origin (this drives canonical, `og:url` and `og:image`) and swap the origin in `robots.txt` and `sitemap.xml`. Until it is set, those resolve against whatever host serves the site, which is correct for the current GitHub Pages deployment.
 - [ ] **Business name** — listed publicly as both "FebRight Cleaning Services" and "FebRight Home Services". Confirm which to use.
 - [ ] **Service area** — site currently says "Calgary and surrounding areas". Some listings mention Chestermere. Confirm the real coverage before naming any specific town or neighbourhood.
 - [ ] **Operating hours** — not stated anywhere on the site. Add only once confirmed.
@@ -142,7 +142,7 @@ Nothing below is verified. **Confirm each item with the business owner before th
 - [ ] The nine `gallery/` images and all twelve `before-after/` images are **AI-generated concept photography**, not real FebRight jobs. The Results page states this in writing. Replace with real job photography when available, and only then consider removing the disclaimer.
 - [ ] Confirm FebRight has the right to use the seven `google-maps-photos/` images on its own website, and that no client space is shown without permission.
 - [ ] Add a real logo. The current wordmark is an original SVG placeholder and is not presented as an official logo.
-- [ ] Add a real `og-image.jpg` to `public/` — the Open Graph tag currently points at a file that does not exist.
+- [ ] Replace the Open Graph share image. `og:image` currently points at the hero photo, which is concept photography; a branded share card would serve better.
 
 ### Must configure before launch
 - [ ] Set `VITE_FORMSPREE_ENDPOINT` so the quote form submits for real, then **send a test submission and confirm it arrives**.

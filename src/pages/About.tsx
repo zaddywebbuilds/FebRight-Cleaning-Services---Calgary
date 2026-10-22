@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Leaf, Heart, Users, ArrowRight } from 'lucide-react'
 import ScrollReveal from '../components/ScrollReveal'
+import Seo from '../components/Seo'
 import CTA from '../components/CTA'
 import { img } from '../content/imageMap'
 
@@ -13,6 +14,11 @@ const principles = [
 export default function About() {
   return (
     <main className="pt-24 bg-ivory">
+      <Seo
+        title="About Us"
+        description="FebRight Cleaning Services brings thoughtful, eco-conscious cleaning to homes and offices across Calgary. Learn how we work and what guides us."
+        path="/about"
+      />
 
       {/* Intro */}
       <section className="py-12 lg:py-16">

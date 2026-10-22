@@ -1,4 +1,5 @@
 import ScrollReveal from '../components/ScrollReveal'
+import Seo from '../components/Seo'
 
 const sections = [
   {
@@ -34,6 +35,11 @@ const sections = [
 export default function Privacy() {
   return (
     <main className="pt-24 bg-ivory">
+      <Seo
+        title="Privacy Policy"
+        description="How FebRight Cleaning Services handles information submitted through this website, including quote requests, retention and your choices."
+        path="/privacy"
+      />
       <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
           <ScrollReveal className="mb-10">

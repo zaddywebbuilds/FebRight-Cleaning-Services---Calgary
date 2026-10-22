@@ -3,6 +3,7 @@ import { ArrowRight, ArrowLeft } from 'lucide-react'
 import { services } from '../content/services'
 import QuoteForm from '../components/QuoteForm'
 import ScrollReveal from '../components/ScrollReveal'
+import Seo from '../components/Seo'
 
 export default function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>()
@@ -24,6 +25,11 @@ export default function ServiceDetail() {
 
   return (
     <main className="pt-24 bg-ivory">
+      <Seo
+        title={`${service.title} in Calgary`}
+        description={`${service.tagline} ${service.description}`.slice(0, 155)}
+        path={`/services/${service.slug}`}
+      />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-6 pb-2">
         <Link to="/services" className="inline-flex items-center gap-1.5 text-xs text-charcoal/50 hover:text-forest font-500 transition-colors duration-200">

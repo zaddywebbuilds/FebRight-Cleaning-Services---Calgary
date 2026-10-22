@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  URLs point at the live GitHub Pages deployment, which is where the site is
+  actually served today. Swap the origin here and in robots.txt once the
+  production domain is confirmed; a sitemap listing a host that does not
+  serve the content is ignored.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://febrightcleaningservices.com/</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://febrightcleaningservices.com/services</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://febrightcleaningservices.com/services/residential-cleaning</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://febrightcleaningservices.com/services/commercial-cleaning</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://febrightcleaningservices.com/about</loc><priority>0.7</priority><changefreq>yearly</changefreq></url>
-  <url><loc>https://febrightcleaningservices.com/results</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://febrightcleaningservices.com/faq</loc><priority>0.6</priority><changefreq>yearly</changefreq></url>
-  <url><loc>https://febrightcleaningservices.com/contact</loc><priority>0.9</priority><changefreq>yearly</changefreq></url>
-  <url><loc>https://febrightcleaningservices.com/privacy</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/services</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/services/residential-cleaning</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/services/commercial-cleaning</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/contact</loc><priority>0.9</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/about</loc><priority>0.7</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/results</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/faq</loc><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://zaddywebbuilds.github.io/FebRight-Cleaning-Services---Calgary/privacy</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
 </urlset>

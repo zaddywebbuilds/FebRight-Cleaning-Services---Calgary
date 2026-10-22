@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Leaf, Shield, Clock, ArrowRight, MapPin, Phone } from 'lucide-react'
 import Hero from '../components/Hero'
+import Seo from '../components/Seo'
 import FAQAccordion from '../components/FAQAccordion'
 import CTA from '../components/CTA'
 import ScrollReveal from '../components/ScrollReveal'
@@ -22,6 +23,13 @@ const steps = [
 export default function Home() {
   return (
     <main>
+      <Seo
+        brandOnly
+        title="FebRight Cleaning Services | Calgary Home & Office Cleaning"
+        description="Eco-friendly residential and commercial cleaning in Calgary and surrounding areas. Careful, detail-focused work. Request a free quote today."
+        path="/"
+      />
+
       <Hero />
 
       {/* Category strip */}

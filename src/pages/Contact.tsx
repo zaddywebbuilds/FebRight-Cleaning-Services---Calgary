@@ -2,6 +2,7 @@ import { useSearchParams } from 'react-router-dom'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import QuoteForm from '../components/QuoteForm'
 import ScrollReveal from '../components/ScrollReveal'
+import Seo from '../components/Seo'
 
 export default function Contact() {
   const [params] = useSearchParams()
@@ -9,6 +10,11 @@ export default function Contact() {
 
   return (
     <main className="pt-24 bg-ivory">
+      <Seo
+        title="Contact & Free Quote"
+        description="Request a free, no-obligation cleaning quote for your Calgary home or office. Tell us about your space and we'll follow up to confirm details."
+        path="/contact"
+      />
 
       <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">

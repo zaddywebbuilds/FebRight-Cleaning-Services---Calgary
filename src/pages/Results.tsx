@@ -3,6 +3,7 @@ import { Columns2, SplitSquareHorizontal } from 'lucide-react'
 import clsx from 'clsx'
 import BeforeAfterSlider from '../components/BeforeAfterSlider'
 import ScrollReveal from '../components/ScrollReveal'
+import Seo from '../components/Seo'
 import CTA from '../components/CTA'
 import { beforeAfterSets } from '../content/imageMap'
 
@@ -13,6 +14,11 @@ export default function Results() {
 
   return (
     <main className="pt-24 bg-ivory">
+      <Seo
+        title="Before & After Results"
+        description="Compare kitchen, bathroom, living room and office spaces before and after a careful clean. Drag the slider or view them side by side."
+        path="/results"
+      />
 
       {/* Header + view toggle share the row */}
       <section className="py-12 lg:py-14">

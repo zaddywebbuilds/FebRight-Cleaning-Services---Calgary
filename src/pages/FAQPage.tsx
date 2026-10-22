@@ -2,12 +2,18 @@ import { Link } from 'react-router-dom'
 import { Phone, Mail, ArrowRight } from 'lucide-react'
 import FAQAccordion from '../components/FAQAccordion'
 import ScrollReveal from '../components/ScrollReveal'
+import Seo from '../components/Seo'
 import CTA from '../components/CTA'
 import { faqs } from '../content/faqs'
 
 export default function FAQPage() {
   return (
     <main className="pt-24 bg-ivory">
+      <Seo
+        title="Frequently Asked Questions"
+        description="Answers about our Calgary service area, eco-friendly products, preparing your home, scheduling and how to get a quote from FebRight Cleaning Services."
+        path="/faq"
+      />
 
       <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
