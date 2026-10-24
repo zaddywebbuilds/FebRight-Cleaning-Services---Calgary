@@ -3,14 +3,41 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* The header is fixed, so its height is shared with anything that has to
+       sit under it or fill the rest of the viewport. */
+    --header-h: 4.5rem;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --header-h: 5rem;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+    /* Reveal animations offset content sideways before it settles; <html> is
+       the scroll container, so clipping <body> alone leaves a stray x-scroll. */
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-ivory text-charcoal font-sans;
+    overflow-x: clip;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2 {
+    text-wrap: balance;
+  }
+
+  img, video {
+    display: block;
+    max-width: 100%;
   }
 
   h1, h2, h3, h4, h5 {
@@ -47,6 +74,18 @@
     @apply transition-all duration-400 ease-smooth hover:-translate-y-1 hover:shadow-lg;
   }
 
+  /* Keeps the copy legible over the reel without washing the footage out:
+     dense only behind the text, fully clear across the top of the frame. */
+  .hero-scrim {
+    background: linear-gradient(
+      to top,
+      theme('colors.forest') 0%,
+      rgb(21 61 53 / 0.94) 30%,
+      rgb(21 61 53 / 0.60) 46%,
+      rgb(21 61 53 / 0) 68%
+    );
+  }
+
   .img-surface {
     @apply w-full h-full object-cover;
   }
@@ -79,6 +118,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-padding-top: var(--header-h);
+  }
+
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;

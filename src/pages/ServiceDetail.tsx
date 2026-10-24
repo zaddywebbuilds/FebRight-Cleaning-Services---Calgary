@@ -43,14 +43,14 @@ export default function ServiceDetail() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <ScrollReveal direction="left">
-              <div className="overflow-hidden rounded-lg shadow-xl aspect-[4/3]">
+              <div className="overflow-hidden rounded-lg shadow-xl">
                 <img
                   src={service.detailImage.src}
                   alt={service.detailImage.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                   loading="eager"
-                  width={640}
-                  height={480}
+                  width={788}
+                  height={550}
                 />
               </div>
             </ScrollReveal>

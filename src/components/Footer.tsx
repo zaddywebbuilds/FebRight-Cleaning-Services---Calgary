@@ -27,7 +27,7 @@ export default function Footer() {
       {/* Top accent line */}
       <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-40" />
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 lg:py-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-14 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
           {/* Brand column */}
@@ -138,7 +138,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 pt-6 border-t border-ivory/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ivory/40">
+        <div className="mt-12 pt-6 border-t border-ivory/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ivory/40">
           <p>© {new Date().getFullYear()} FebRight Cleaning Services. All rights reserved.</p>
           <div className="flex gap-6">
             {footerLinks.legal.map(({ to, label }) => (

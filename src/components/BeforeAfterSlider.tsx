@@ -46,7 +46,7 @@ export default function BeforeAfterSlider({
     <div className="relative">
       <div
         ref={containerRef}
-        className="relative overflow-hidden select-none aspect-[4/3] cursor-col-resize"
+        className="relative overflow-hidden select-none aspect-[2/3] cursor-col-resize"
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}
@@ -62,8 +62,8 @@ export default function BeforeAfterSlider({
           className="absolute inset-0 w-full h-full object-cover"
           draggable="false"
           loading="lazy"
-          width={800}
-          height={600}
+          width={724}
+          height={1086}
         />
 
         {/* BEFORE image — clipped to left side by position% */}
@@ -78,8 +78,8 @@ export default function BeforeAfterSlider({
             style={{ width: `${10000 / position}%`, maxWidth: 'none' }}
             draggable="false"
             loading="lazy"
-            width={800}
-            height={600}
+            width={724}
+            height={1086}
           />
         </div>
 

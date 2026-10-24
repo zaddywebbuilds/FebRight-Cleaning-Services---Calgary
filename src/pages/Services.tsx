@@ -30,14 +30,14 @@ export default function Services() {
               </p>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.1} className="lg:col-span-5">
-              <div className="overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
+              <div className="overflow-hidden rounded-lg shadow-lg">
                 <img
                   src={img.svcDetail1.src}
                   alt={img.svcDetail1.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                   loading="eager"
-                  width={560}
-                  height={420}
+                  width={512}
+                  height={342}
                 />
               </div>
             </ScrollReveal>
@@ -56,14 +56,14 @@ export default function Services() {
                   direction={i % 2 === 0 ? 'left' : 'right'}
                   className={i % 2 === 1 ? 'lg:order-last' : ''}
                 >
-                  <div className="overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
+                  <div className="overflow-hidden rounded-lg shadow-lg">
                     <img
                       src={service.image.src}
                       alt={service.image.alt}
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto"
                       loading="lazy"
-                      width={640}
-                      height={480}
+                      width={512}
+                      height={341}
                     />
                   </div>
                 </ScrollReveal>
@@ -104,14 +104,14 @@ export default function Services() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <ScrollReveal direction="left" className="lg:col-span-5">
-              <div className="overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
+              <div className="overflow-hidden rounded-lg shadow-lg">
                 <img
                   src={img.svcDetail2.src}
                   alt={img.svcDetail2.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                   loading="lazy"
-                  width={560}
-                  height={420}
+                  width={736}
+                  height={492}
                 />
               </div>
             </ScrollReveal>

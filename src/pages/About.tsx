@@ -42,14 +42,14 @@ export default function About() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={0.1} className="lg:col-span-5">
-              <div className="overflow-hidden rounded-lg shadow-xl aspect-[4/5]">
+              <div className="overflow-hidden rounded-lg shadow-xl">
                 <img
                   src={img.aboutPortrait.src}
                   alt={img.aboutPortrait.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                   loading="eager"
-                  width={560}
-                  height={700}
+                  width={512}
+                  height={341}
                 />
               </div>
             </ScrollReveal>
@@ -89,14 +89,14 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <ScrollReveal direction="left" className="lg:col-span-5">
-              <div className="overflow-hidden rounded-lg shadow-xl aspect-[4/3]">
+              <div className="overflow-hidden rounded-lg shadow-xl">
                 <img
                   src={img.aboutEco.src}
                   alt={img.aboutEco.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                   loading="lazy"
-                  width={560}
-                  height={420}
+                  width={512}
+                  height={341}
                 />
               </div>
             </ScrollReveal>
@@ -140,14 +140,14 @@ export default function About() {
               </Link>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.08} className="lg:col-span-5">
-              <div className="overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
+              <div className="overflow-hidden rounded-lg shadow-lg">
                 <img
                   src={img.aboutAccent.src}
                   alt={img.aboutAccent.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                   loading="lazy"
-                  width={560}
-                  height={420}
+                  width={810}
+                  height={558}
                 />
               </div>
             </ScrollReveal>

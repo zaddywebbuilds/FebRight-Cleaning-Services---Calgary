@@ -92,14 +92,14 @@ export default function Results() {
                   />
                 ) : (
                   <figure>
-                    <div className="overflow-hidden rounded-lg shadow-md aspect-[16/9]">
+                    <div className="overflow-hidden rounded-lg shadow-md aspect-[4/3]">
                       <img
                         src={set.comparison.src}
                         alt={set.comparison.alt}
                         className="w-full h-full object-cover"
                         loading="lazy"
-                        width={800}
-                        height={450}
+                        width={1448}
+                        height={1086}
                       />
                     </div>
                     <figcaption className="text-center mt-3 text-sm text-charcoal/50 font-300">

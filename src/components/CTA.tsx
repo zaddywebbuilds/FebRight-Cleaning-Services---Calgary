@@ -23,7 +23,7 @@ export default function CTA({
 }: CTAProps) {
   return (
     <section className={dark ? 'bg-forest text-ivory' : 'bg-sage'}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
           {/* Text */}

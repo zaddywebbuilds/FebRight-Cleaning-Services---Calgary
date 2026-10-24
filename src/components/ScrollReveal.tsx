@@ -18,6 +18,17 @@ export default function ScrollReveal({
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
   const prefersReduced = useReducedMotion()
+  // Horizontal entrances read as a jolt on a narrow screen — and push content
+  // past the viewport edge — so below lg everything simply rises.
+  const [wide, setWide] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia('(min-width: 1024px)').matches)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)')
+    const onChange = () => setWide(mq.matches)
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
 
   useEffect(() => {
     const el = ref.current
@@ -36,8 +47,8 @@ export default function ScrollReveal({
     ? { opacity: 0 }
     : {
         opacity: 0,
-        y: direction === 'up' ? 32 : 0,
-        x: direction === 'left' ? -32 : direction === 'right' ? 32 : 0,
+        y: direction === 'up' || !wide ? 24 : 0,
+        x: wide ? (direction === 'left' ? -32 : direction === 'right' ? 32 : 0) : 0,
       }
 
   const animate = visible

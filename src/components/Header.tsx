@@ -34,7 +34,7 @@ export default function Header() {
           : 'bg-ivory',
       )}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-18 md:h-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-[var(--header-h)]">
         {/* Logo wordmark */}
         <Link
           to="/"
