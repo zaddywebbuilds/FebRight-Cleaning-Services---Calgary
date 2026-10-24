@@ -74,18 +74,6 @@
     @apply transition-all duration-400 ease-smooth hover:-translate-y-1 hover:shadow-lg;
   }
 
-  /* Keeps the copy legible over the reel without washing the footage out:
-     dense only behind the text, fully clear across the top of the frame. */
-  .hero-scrim {
-    background: linear-gradient(
-      to top,
-      theme('colors.forest') 0%,
-      rgb(21 61 53 / 0.94) 30%,
-      rgb(21 61 53 / 0.60) 46%,
-      rgb(21 61 53 / 0) 68%
-    );
-  }
-
   .img-surface {
     @apply w-full h-full object-cover;
   }
