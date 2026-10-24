@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Pause, Play } from 'lucide-react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { video } from '../content/imageMap'
 
 const trust = ['Eco-Friendly Products', 'Residential & Commercial', 'Calgary & Area']
@@ -14,21 +14,40 @@ const trust = ['Eco-Friendly Products', 'Residential & Commercial', 'Calgary & A
  */
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const prefersReduced = useReducedMotion()
   const [playing, setPlaying] = useState(true)
 
   useEffect(() => {
     const el = videoRef.current
     if (!el) return
-    if (prefersReduced) {
-      el.pause()
-      setPlaying(false)
-      return
+
+    // Muted has to be set on the element too: some browsers gate autoplay on
+    // the property rather than the attribute.
+    el.muted = true
+
+    const tryPlay = () => {
+      el.play().then(() => setPlaying(true)).catch(() => setPlaying(false))
     }
-    // iOS low-power mode and some data-saver modes ignore the autoplay
-    // attribute, so the poster has to stay with a working play control.
-    el.play().then(() => setPlaying(true)).catch(() => setPlaying(false))
-  }, [prefersReduced])
+    tryPlay()
+
+    // iOS low-power mode, data-saver modes and a cold cache can all refuse the
+    // first attempt, so retry once there are frames and again on the first
+    // interaction anywhere on the page.
+    el.addEventListener('canplay', tryPlay)
+    const onFirstInput = () => tryPlay()
+    document.addEventListener('touchstart', onFirstInput, { once: true, passive: true })
+    document.addEventListener('click', onFirstInput, { once: true })
+
+    // Coming back to a backgrounded tab should pick the reel up again.
+    const onVisible = () => { if (!document.hidden) tryPlay() }
+    document.addEventListener('visibilitychange', onVisible)
+
+    return () => {
+      el.removeEventListener('canplay', tryPlay)
+      document.removeEventListener('touchstart', onFirstInput)
+      document.removeEventListener('click', onFirstInput)
+      document.removeEventListener('visibilitychange', onVisible)
+    }
+  }, [])
 
   const toggle = () => {
     const el = videoRef.current
@@ -43,15 +62,15 @@ export default function Hero() {
 
   return (
     <section className="bg-forest text-ivory pt-[var(--header-h)]">
-      {/* Phones read this top to bottom: headline, reel, buttons. From lg the
-          reel moves alongside and the buttons tuck back under the copy. */}
-      {/* The reel spans both rows on desktop, so row 1 hugs the headline and
-          row 2 absorbs the slack — otherwise the extra height opens a gap
-          between the headline and the line under it. */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-8 lg:py-16 flex flex-col lg:grid lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:gap-x-12">
+      {/* Two tracks on desktop: the copy capped at a comfortable measure and
+          the reel exactly as wide as it needs to be, centred as a pair. A
+          twelve-column grid left a dead column between them on wide screens.
+          Row 1 hugs the headline and row 2 takes the slack, so the tall reel
+          spanning both cannot stretch a gap under the headline. */}
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-8 lg:py-16 flex flex-col lg:grid lg:grid-cols-[minmax(0,32rem)_auto] lg:grid-rows-[auto_1fr] lg:justify-center lg:gap-x-14">
 
         {/* Copy */}
-        <div className="lg:row-start-1 lg:col-start-1 lg:col-span-6">
+        <div className="lg:row-start-1 lg:col-start-1">
           <motion.p
             className="section-label mb-4"
             initial={{ opacity: 0, y: 8 }}
@@ -62,7 +81,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.h1
-            className="font-display text-5xl sm:text-6xl lg:text-7xl font-300 leading-[1.02] mb-5"
+            className="font-display text-5xl sm:text-6xl lg:text-7xl font-300 leading-[1.02]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -74,12 +93,12 @@ export default function Hero() {
 
         {/* The reel */}
         <motion.div
-          className="mt-8 lg:mt-0 lg:row-start-1 lg:row-span-2 lg:col-start-8 lg:col-span-5 lg:self-center flex flex-col items-center"
+          className="mt-8 lg:mt-0 lg:row-start-1 lg:row-span-2 lg:col-start-2 lg:self-center flex flex-col items-center"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <div className="relative w-full aspect-[9/16] lg:w-auto lg:h-[70vh] lg:max-h-[660px] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gold/25">
+          <div className="relative w-full aspect-[9/16] lg:w-auto lg:h-[70vh] lg:max-h-[680px] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gold/25">
             <video
               ref={videoRef}
               className="w-full h-full object-cover"
@@ -89,7 +108,7 @@ export default function Hero() {
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="auto"
               aria-label="Before and after footage of Calgary homes cleaned by FebRight"
             />
 
@@ -109,10 +128,10 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* Supporting line and actions — below the reel on phones, and still
+        {/* Supporting line and actions — below the reel on phones, and back
             directly under the headline once the grid takes over at lg. */}
         <motion.div
-          className="mt-8 lg:mt-6 lg:row-start-2 lg:col-start-1 lg:col-span-6 lg:self-start"
+          className="mt-8 lg:mt-6 lg:row-start-2 lg:col-start-1 lg:self-start"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.44 }}
